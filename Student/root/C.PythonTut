@@ -1,0 +1,126 @@
+Python Terminal Game: Guess the Number with High Score
+
+Overview This tutorial shows you step-by-step how to write and run a terminal (command-line) Python game called "Guess the Number." The game chooses a random number and the player tries to guess it. The program records a high score (the fewest guesses) in a file named C.PythonTUT inside your cloned fork of the repository https://github.com/MrTeuters22/CHS26 and demonstrates how to use GitHub Desktop to clone the fork and open the project. Instructions assume you have Python installed (Python 3.7+ recommended) and GitHub Desktop.
+
+Before you begin (setup)
+
+Install Python from python.org and make sure the python (or python3) command works in your terminal.
+Install GitHub Desktop and sign in.
+Fork the repository https://github.com/MrTeuters22/CHS26 on GitHub (use your GitHub account).
+Open GitHub Desktop, sign in, then use "File > Clone repository" and choose your fork. Clone it to a local folder.
+Inside the cloned folder, create or open a file named C.PythonTUT (this will store the high score). If it does not exist, the program will create it.
+Files you will edit / create
+
+A Python script file (e.g., guess_number.py) placed inside your cloned repo.
+The high-score file: C.PythonTUT (plain text).
+Step-by-step code (procedural)
+
+Create a new Python file named guess_number.py inside your cloned repository folder.
+
+Copy this code into guess_number.py and save:
+import random
+import os
+
+HIGH_SCORE_FILE = 'C.PythonTUT'
+
+def read_high_score():
+    if not os.path.exists(HIGH_SCORE_FILE):
+        return None
+    try:
+        with open(HIGH_SCORE_FILE, 'r') as f:
+            content = f.read().strip()
+            return int(content) if content else None
+    except:
+        return None
+
+def write_high_score(score):
+    with open(HIGH_SCORE_FILE, 'w') as f:
+        f.write(str(score))
+
+def play_game():
+    target = random.randint(1, 100)
+    guesses = 0
+    print("I'm thinking of a number between 1 and 100. Try to guess it!")
+    while True:
+        try:
+            guess = int(input("Enter your guess: ").strip())
+        except ValueError:
+            print("Please enter a valid integer.")
+            continue
+        guesses += 1
+        if guess < target:
+            print("Too low.")
+        elif guess > target:
+            print("Too high.")
+        else:
+            print(f"Correct! You guessed it in {guesses} guesses.")
+            return guesses
+
+def main():
+    print("=== Guess the Number ===")
+    current_high = read_high_score()
+    if current_high is None:
+        print("No high score yet. Be the first to set one!")
+    else:
+        print(f"Current high score (fewest guesses): {current_high}")
+    while True:
+        guesses = play_game()
+        current_high = read_high_score()
+        if current_high is None or guesses < current_high:
+            print("New high score! Saving...")
+            write_high_score(guesses)
+        else:
+            print("You did not beat the high score this time.")
+        again = input("Play again? (y/n): ").strip().lower()
+        if again != 'y':
+            print("Thanks for playing!")
+            break
+
+if __name__ == '__main__':
+    main()
+
+How the code works (brief):
+HIGH_SCORE_FILE is the filename C.PythonTUT.
+read_high_score() reads and returns the stored high score as an integer or None.
+write_high_score(score) overwrites the high score file with the new best score.
+play_game() runs one round: chooses a random number, takes guesses, and returns the number of guesses used.
+main() shows the current high score, runs rounds, updates high score if the player used fewer guesses, and asks to play again.
+Run the game in terminal:
+Open your terminal and change directory to the cloned repo folder. For example:
+On Windows (PowerShell or CMD): cd "C:\Users\<YourName>\path\to\CHS26"
+On macOS / Linux: cd /Users/<YourName>/path/to/CHS26
+Run:
+python guess_number.py or python3 guess_number.py
+Follow prompts. After a new best score, C.PythonTUT will contain a single integer representing the fewest guesses.
+Using GitHub Desktop to manage changes
+
+Open the cloned repository in GitHub Desktop.
+After editing or adding guess_number.py and C.PythonTUT, go to GitHub Desktop:
+You will see changed files listed.
+Add a short commit message like "Add guess the number game and high-score file".
+Click Commit to main (or the branch you’re working on).
+To push your changes to your fork on GitHub, click "Push origin".
+If you want to create a pull request to the original repository, use the "Branch" menu or the GitHub website to open a PR.
+Important tips
+
+If multiple students use the same cloned folder, the high score will be shared locally. Keep separate clones for each student to keep personal scores separate.
+If the high-score file becomes corrupted (non-integer content), delete B.PythonTUT and run the program again; it will recreate it.
+To change difficulty, alter random.randint(1, 100) to a different range (e.g., 1, 50).
+List of Important Terms
+
+Python: A high-level programming language used to write the game.
+Terminal / Command Line: A text-based interface to run programs and commands.
+Repository (repo): A folder of project files tracked by Git/GitHub.
+Fork: A copy of someone else's GitHub repository that lives in your GitHub account.
+Clone: A local copy of a remote repository on your computer.
+Commit: A saved snapshot of changes in Git.
+Push: Uploading committed changes from your local clone to your GitHub fork.
+Branch: A parallel version of the repository where you can make changes safely.
+High score file: Here, B.PythonTUT — a plain text file storing the best (lowest) guess count.
+Exception handling: Code that handles errors (e.g., non-integer input).
+Random number: A number selected unpredictably in code using the random module.
+Student safety and academic integrity
+
+Do not share personal login credentials. Each student should use their own GitHub account.
+Use comments in your code to explain logic; teachers may require submission of both code and a short reflection.
+Review the code and test-run the game. Make any small modifications you want (messages, ranges) and remember to commit and push your work with GitHub Desktop so your changes are saved to your fork.
