@@ -1,0 +1,125 @@
+How to Fork a GitHub Repository and Start Contributing
+Overview
+This step-by-step tutorial shows 9th‑grade students how to create a fork of the repository at https://github.com/MrTeuters22/CHS26, clone it to their computer, make changes, and submit those changes back using a pull request.
+What you need
+
+A computer with internet access
+A free GitHub account (sign up at https://github.com)
+Git installed on your computer (optional for web-only editing)
+A text editor (e.g., VS Code, Notepad++)
+
+Steps
+
+
+Sign in to GitHub
+
+Go to https://github.com and sign in with your username and password.
+
+
+
+Open the repository
+
+In your browser, visit https://github.com/MrTeuters22/CHS26.
+
+
+
+Fork the repository
+
+At the top-right of the repository page, click the "Fork" button.
+GitHub creates a copy of the repository under your account (e.g., github.com/your-username/CHS26).
+
+
+
+Clone your fork (web or local)
+
+Web edit (no Git installed): Click the file you want to change, then the pencil icon to edit, commit changes directly to your fork.
+Local (recommended for multiple or larger changes):
+
+Click the green "Code" button on your fork page and copy the URL (choose HTTPS).
+Open a terminal/command prompt on your computer.
+Run: git\ clone\ https://github.com/your-username/CHS26.git
+Change into the project folder: cd\ CHS26
+
+
+
+
+
+Create a new branch
+
+Always work on a branch separate from main to keep changes organized:
+
+git\ checkout\ -b\ my-feature-branch
+
+
+Replace "my-feature-branch" with a short descriptive name (e.g., fix-typo, add-lesson).
+
+
+
+Make your changes
+
+Use your text editor to edit files, add new files, or fix mistakes.
+Save your changes.
+
+
+
+Stage and commit changes
+
+Stage files you changed:
+
+git\ add\ . (adds all changed files) or git\ add\ filename
+
+
+Commit with a clear message:
+
+git\ commit\ -m\ "Brief\ description\ of\ changes"
+
+
+
+
+
+Push your branch to GitHub
+
+Upload your branch to your fork:
+
+git\ push\ --set-upstream\ origin\ my-feature-branch
+
+
+
+
+
+Create a Pull Request (PR)
+
+On GitHub, go to your fork. You’ll see a prompt to compare & pull request for your pushed branch—click it.
+Ensure the base repository is MrTeuters22/CHS26 and the base branch is usually main (or as instructed).
+Write a clear title and description explaining what you changed and why.
+Submit the pull request.
+
+
+
+Respond to feedback
+
+Repository maintainers may request changes. Make edits in your branch, commit, and push again; the PR updates automatically.
+Once approved, maintainers will merge your PR into the original repository.
+
+
+
+Tips
+
+Keep commit messages short but descriptive.
+Make small, focused changes per PR.
+If unsure, ask the repository owner or open an issue describing what you plan to do.
+
+Important Terms
+
+Fork: A personal copy of someone else’s repository in your own GitHub account.
+Repository (repo): A project folder on GitHub containing files and history.
+Clone: A local copy of a repository on your computer.
+Branch: A parallel version of the project where you make changes without affecting main.
+Commit: A saved set of changes with a message describing them.
+Push: Uploading your commits from your local computer to GitHub.
+Pull Request (PR): A request to merge your branch’s changes into another repository or branch.
+Merge: The process of combining changes from one branch into another.
+Origin: The default name Git gives to the remote repository you cloned from.
+Main (or master): The primary branch of a repository where the stable code is usually kept.
+
+Review these steps carefully before starting. Practice on small edits first to build confidence.
