@@ -1,0 +1,144 @@
+Quick Guide: Learning Important Coding Languages (Beyond Python, C++, Java, TypeScript, HTML, and CSS)
+Purpose: A short, student-friendly procedural tutorial that shows how to find, open, and study a file named I.OtherLangTut from your cloned fork of the repository https://github.com/MrTeuters22/CHS26 using GitHub Desktop, and gives an overview of several other important programming languages you might study. Intended for 9th-grade students. Keep this page for reference as you explore new languages.
+Before you begin
+
+Make sure you have GitHub Desktop installed and you have already cloned your fork of https://github.com/MrTeuters22/CHS26.
+Confirm the file I.OtherLangTut exists in your forked repository directory. If not, check the repository on GitHub.com and pull or fetch changes in GitHub Desktop.
+
+Step-by-step: Open and read I.OtherLangTut with GitHub Desktop
+
+Open GitHub Desktop and select your forked repository from the left panel.
+Click Repository > Open in Explorer (Windows) or Repository > Show in Finder (Mac) to view the repository folder on your computer.
+In the folder, locate the file named I.OtherLangTut.
+Right-click the file and choose “Open with” and select a plain-text editor (e.g., Notepad, VS Code, or TextEdit in plain-text mode).
+Read the contents carefully. If the file contains instructions or code examples, make notes or copy code samples into a separate notes file for practice.
+If you make changes, save them locally, then use GitHub Desktop to commit and push your changes:
+
+In GitHub Desktop, stage your changes by entering a short commit message.
+Click Commit to main (or the current branch), then Push origin to send changes to your GitHub fork.
+
+
+
+How to study a new programming language (procedure)
+
+Identify the language’s purpose (web, systems, data, scripting, mobile, embedded).
+Learn basic syntax and how to run a simple “Hello” program.
+Practice core concepts (variables, control flow, functions, input/output).
+Build small projects or solve short problems to reinforce learning.
+Read official docs or reputable tutorials and experiment in a code editor or REPL.
+Keep notes on vocabulary and typical use-cases for the language.
+
+Short overviews of important languages (other than Python, C++, Java, TypeScript, HTML, CSS)
+
+
+JavaScript (runtime & frameworks aside from TypeScript)
+
+Use: Client-side web scripting, server work with Node.js.
+Quick start: Create a .js file with console.log('Hello'); run with node or open in a browser.
+Strength: Ubiquitous on the web; many frameworks like React, Vue available.
+
+
+
+Rust
+
+Use: Systems programming, high-performance and safe code.
+Quick start: Install Rust toolchain (rustup), use cargo to create & run projects.
+Strength: Memory-safety without a garbage collector; ideal for performance-critical programs.
+
+
+
+Go (Golang)
+
+Use: Network services, cloud infrastructure, tooling.
+Quick start: Install Go, write a main.go with package main and func main(), run with go run.
+Strength: Simplicity, fast compilation, built-in concurrency (goroutines).
+
+
+
+Kotlin
+
+Use: Android apps, server-side; interoperable with Java.
+Quick start: Use an online REPL or IntelliJ IDEA; a Kotlin file with fun main() { println("Hi") } runs easily.
+Strength: Concise syntax, modern features, fully interoperable with Java.
+
+
+
+Swift
+
+Use: iOS, macOS, and other Apple platform development.
+Quick start: Use Swift Playgrounds or Xcode playground; write print("Hello") and run.
+Strength: Modern language design, optimized for Apple ecosystem.
+
+
+
+Ruby
+
+Use: Web apps (Rails), scripting, automation.
+Quick start: Install Ruby, run ruby -e 'puts "Hello"' or create a .rb file and run it.
+Strength: Readable syntax, great for quick development and beginners.
+
+
+
+PHP
+
+Use: Server-side web development, content-driven sites.
+Quick start: Put  in a .php file and run via a local server (e.g., XAMPP).
+Strength: Wide hosting support, powers many web platforms.
+
+
+
+SQL (Structured Query Language)
+
+Use: Querying and managing relational databases.
+Quick start: Use an online SQL editor or local DB; SELECT * FROM table; to retrieve data.
+Strength: Essential for data retrieval and backend work.
+
+
+
+R
+
+Use: Statistical computing, data analysis, visualization.
+Quick start: Use RStudio or online environments; run print("Hello") or simple plots.
+Strength: Rich statistics libraries and plotting tools.
+
+
+
+MATLAB / Octave
+
+Use: Numerical computing, engineering simulations.
+Quick start: Write a .m file or use the console to execute simple calculations and plots.
+Strength: Built-in math and plotting for science and engineering tasks.
+
+
+
+How to practice safely and effectively
+
+Start small: a “Hello” program, then short tasks (e.g., read a file, compute a running total).
+Use official docs and beginner tutorials.
+Run code in a safe environment (local machine or trusted online editor).
+Work incrementally: test as you code and fix errors immediately.
+Collaborate and ask questions: use community forums or classroom help.
+
+Important terms and definitions
+
+Repository (repo): A storage location for your project's files and revision history.
+Fork: A copy of someone else’s repository under your GitHub account.
+Clone: Downloading a repository to your local computer.
+Commit: A saved change in the repository’s history with a message describing it.
+Push: Sending your local commits to the remote repository on GitHub.
+Branch: A parallel version of the repository where you can develop features separately.
+Merge: Combining changes from one branch into another.
+REPL: Read–Eval–Print Loop — an interactive programming environment for trying code snippets.
+Compiler: A tool that converts source code into executable machine code.
+Interpreter: A program that executes source code directly, line by line.
+Syntax: The set of rules that defines the structure of valid programs in a language.
+Library: Reusable code that provides functions and tools you can use in programs.
+Framework: A larger structure of libraries and conventions for building applications.
+API: Application Programming Interface — a set of functions and protocols for building software and interacting with services.
+Concurrency: Running multiple computations at the same time (e.g., threads, goroutines).
+Garbage collector: Runtime system that automatically reclaims unused memory.
+Type system: Rules that assign types (like number, string) to values and variables.
+
+Create a Summary with 3 questions you have about coding languages here:
+
+Note: If you want, provide the I.OtherLangTut file contents from your cloned repo (paste text here) and this guide can be adapted to include specific excerpts or exercises directly tied to that file.

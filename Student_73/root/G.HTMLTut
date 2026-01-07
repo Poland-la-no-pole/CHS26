@@ -1,0 +1,140 @@
+Create and Test a Simple "About Me" Webpage Using GitHub Desktop and G.HTMLTut
+Goal: Step-by-step instructions for creating, editing, and testing a simple "About Me" webpage stored in a file named G.HTMLTut in your cloned fork of https://github.com/MrTeuters22/CHS26 using GitHub Desktop. Clear, age-appropriate steps for 9th‑grade students.
+Before you begin
+
+You need GitHub Desktop installed and signed in.
+You need a fork of https://github.com/MrTeuters22/CHS26 (teacher or repo owner likely already forked it to your account).
+You should have cloned your fork to your computer using GitHub Desktop.
+Locate the repository folder on your computer (GitHub Desktop shows the local path).
+
+Procedure
+
+
+Open the repository in GitHub Desktop
+
+Launch GitHub Desktop.
+In the list of repositories, select your fork of CHS26.
+Confirm the current branch is main (or the branch your teacher asked you to use).
+
+
+
+Locate the file G.HTMLTut
+
+Click Repository > Show in Explorer (Windows) or Repository > Show in Finder (Mac).
+In the repository folder, find the file named G.HTMLTut. If it does not exist, create it (see step 4).
+
+
+
+Make a safe copy (optional but recommended)
+
+Right-click G.HTMLTut and choose Copy, then Paste as G.HTMLTut.backup in the same folder. This preserves the original if you need to revert.
+
+
+
+Create or open G.HTMLTut in a text editor
+
+If G.HTMLTut exists: open it in a simple text editor (e.g., Visual Studio Code, Notepad, or TextEdit set to plain text).
+If it does not exist: create a new file named exactly G.HTMLTut (no extra extension change) and open it.
+Ensure the file contents will be HTML code. Save frequently.
+
+
+
+Write basic HTML for an "About Me" page
+
+Type the following structure into G.HTMLTut (replace bracketed text with your own info):
+
+A simple page includes: a document type, html, head (with a title), and body (with headings, paragraph, and an image or list).
+
+
+Example structure to write in the file (use your own words for the content):
+
+- 
+- About Me — [Your Name]
+- 
+
+
+
+- About Me
+- Hello! My name is [Your Name]. I like [hobby or subject].
+- Favorites
+- 
+  - Favorite subject: [subject]
+  - Favorite hobby: [hobby]
+  - 
+- Contact: [optional email or class handle]
+- 
+
+Save the file as G.HTMLTut.
+
+Note: Even though the file name is G.HTMLTut (not .html), most browsers will still display valid HTML if you open the file. If your teacher requires .html extension, save a copy as G.html instead.
+
+
+Preview the page in a web browser
+
+Open your file manager and navigate to the repository folder.
+Double-click G.HTMLTut. If your computer recognizes it as an HTML file, it will open in your default browser and display the page.
+If double-clicking does not open a browser, open a browser and use File > Open File (or drag the file into the browser window) to load G.HTMLTut.
+If the file doesn’t render because of the unusual extension, open G.HTMLTut in your editor, choose Save As, and save a copy named G.html, then open G.html in the browser.
+
+
+
+Make edits and test iteratively
+
+Return to your text editor, change text, add a new paragraph, or add an image tag pointing to an image in the repo.
+Save the file, then refresh the open browser tab to see changes.
+Repeat until you are satisfied.
+
+
+
+Stage and commit changes in GitHub Desktop
+
+Go back to GitHub Desktop.
+You will see changed files listed in the Changes panel (G.HTMLTut or G.html).
+In the Summary box, type a short commit message like: "Add About Me page draft".
+Click Commit to main (or Commit to branch) to create a local commit.
+
+
+
+Publish or push your commit to GitHub
+
+If this is the first commit since cloning, click Push origin in GitHub Desktop to upload your commit to your fork on GitHub.
+Confirm on github.com under your forked repo that the file and commit appear.
+
+
+
+(Optional) Create a pull request
+
+If your teacher wants work merged upstream, open your fork on GitHub and click Compare & pull request to request merging your changes into the original CHS26 repo. Follow teacher instructions for branch naming or PR description.
+
+
+
+Troubleshooting
+
+If browser shows raw text or code: ensure the file contains proper HTML structure and is opened as a file in the browser, or rename to have a .html extension.
+If GitHub Desktop shows no changes: verify you saved the file in the repository folder and not elsewhere.
+If push fails: check internet connection and that you are signed into the correct GitHub account in GitHub Desktop.
+
+
+
+Important Terms and Definitions
+
+Repository: A folder (local or on GitHub) that stores project files and history.
+Fork: A copy of someone else's repository saved to your GitHub account so you can edit independently.
+Clone: A downloaded copy of a repository from GitHub to your computer.
+Branch: A parallel version of the repository where you can make changes without affecting the main code until merged.
+Commit: A saved set of changes with a message describing what changed; saved to your local repo history.
+Push: Uploading your local commits to the remote repository on GitHub.
+Pull request (PR): A request to merge your branch changes from your fork or branch into another repository or branch.
+HTML (HyperText Markup Language): The code language used to create the structure of web pages.
+Tag: An element in HTML written with angle brackets, e.g.,  is a paragraph tag.
+Extension: The suffix in a filename (like .html or .txt) that indicates the file type; some systems rely on extensions to open files with correct apps.
+Default branch: The main branch (often named main) where finished code is typically merged.
+Local repository: The copy of the repo on your computer.
+Remote repository: The copy stored on GitHub’s servers.
+
+Safety and classroom reminders
+
+Do not publish personal contact details publicly without permission.
+If required, ask your teacher whether to keep the file named G.HTMLTut or to rename to G.html before publishing.
+
+Teacher note: Review student commits and PRs to ensure appropriate content.

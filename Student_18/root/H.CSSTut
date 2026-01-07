@@ -1,0 +1,126 @@
+Create and Test a Simple CSS Animation for Your "About Me" Page
+Overview
+This procedural guide shows how to open your cloned repository with GitHub Desktop, edit the file named H.CSSTut to add a simple CSS animation for your "About Me" webpage, and test the result in a browser. Steps are clear for 9th‑grade students. Follow each step in order and save your work often.
+Before you begin (requirements)
+
+Your computer with GitHub Desktop installed and signed in.
+The repository https://github.com/MrTeuters22/CHS26 already cloned (or forked and cloned) to your machine.
+Basic knowledge of HTML and CSS from the previous activity.
+A text editor (VS Code, Notepad++, or similar) and a modern web browser (Chrome, Edge, Firefox).
+
+Step 1 — Open the repository in GitHub Desktop
+
+Launch GitHub Desktop.
+In the left panel, find and select the CHS26 repository you cloned (or choose File → Add Local Repository if not yet added).
+Confirm the branch is the one you want (usually main or the branch you created).
+
+Step 2 — Open H.CSSTut in your editor
+
+In GitHub Desktop, click Repository → Open in Visual Studio Code (or choose “Show in Explorer” and open the file with your editor).
+Locate the file named H.CSSTut (it may be an HTML file or a CSS file depending on how your project is structured). If it’s an HTML file, the CSS will go either inside a  block or an external CSS file referenced by the HTML. (If the file extension is missing, open it and confirm contents.)
+Make a copy or create a new branch in GitHub Desktop before editing (Repository → Branch → New branch) so you can work safely.
+
+Step 3 — Add the HTML structure for the animated element
+If your "About Me" page has a section for a profile card or header, target one element. Example structure to add or ensure exists in the HTML (insert inside the body where appropriate):
+
+A profile container with a heading and a short bio.
+A class to animate, for example: profile-card.
+
+Ensure your H.CSSTut includes something like:
+
+An element with class "profile-card" (if adding HTML, write it where appropriate).
+
+Note: Keep HTML simple and appropriate to your previous activity. Do not remove other content.
+
+Step 4 — Write the CSS animation
+Open the CSS section in H.CSSTut (either in a  block or linked CSS). Add an animation that fades and slides the profile card into view.
+Example CSS to add (wrap all mathematical or symbol expressions with the required delimiters if used — here CSS uses plain text only):
+/* Animation keyframes */
+@keyframes slideFadeIn {
+0% {
+opacity: 0;
+transform: translateY(20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+/* Apply to the profile card /
+.profile-card {
+max-width: 400px;
+padding: 1rem;
+margin: 2rem auto;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+background-color: #fff;
+/ animation properties */
+animation-name: slideFadeIn;
+animation-duration: 1s;
+animation-timing-function: ease-out;
+animation-fill-mode: both;
+animation-delay: 0.2s;
+}
+Optional: Add a hover effect to make it interactive:
+.profile-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+Important: Keep color and font choices consistent with your page.
+
+Step 5 — Save and preview locally
+
+Save H.CSSTut in your editor.
+If the file is HTML, open it directly in your browser (right‑click → Open with → choose browser). If your project uses a local server, start it (for example, Live Server extension in VS Code).
+Refresh the browser to see the animation. The profile card should fade in and slide up when the page loads. Hovering over it should give the subtle lift effect.
+
+Step 6 — Commit and push changes using GitHub Desktop
+
+In GitHub Desktop you will see changed files listed.
+Type a concise commit message, for example: "Add slideFadeIn animation to profile card in H.CSSTut".
+Click Commit to .
+Click Push origin to upload the branch to GitHub.
+Optionally create a pull request on GitHub to merge into the main repository.
+
+Step 7 — Troubleshooting
+
+Animation not visible: Ensure the element has the class exactly as in CSS (case sensitive).
+Page shows no changes: Clear browser cache or do a hard refresh (Ctrl+F5).
+CSS syntax error: Check for missing semicolons or braces in H.CSSTut.
+External CSS not applied: Ensure the HTML links to the correct CSS file or that the  block exists inside <head>.
+Animation plays only once: If you want it to replay, consider triggering via JavaScript or on hover instead of on load.
+
+Safety and classroom considerations
+
+Keep personal content appropriate for school.
+Do not include sensitive personal information in your "About Me" page.
+Ask teacher permission before publishing any personal pages online.
+
+Important terms and definitions
+
+CSS (Cascading Style Sheets): Rules that control the presentation and layout of HTML.
+HTML (HyperText Markup Language): The structure and content of a webpage.
+Selector: A CSS pattern (like .profile-card) that targets HTML elements to style.
+Class: An attribute on an HTML element used to apply CSS (prefixed with a dot in CSS).
+Keyframes: A CSS rule (@keyframes) that defines the frames of an animation.
+animation-name: The name of the @keyframes animation to apply.
+animation-duration: How long the animation runs (e.g., 1s).
+animation-delay: Time to wait before starting the animation.
+animation-fill-mode: Controls how styles are applied before/after the animation runs.
+transform: A CSS property that moves, scales, or rotates elements (e.g., translateY).
+opacity: A CSS property that controls transparency (0 = invisible, 1 = fully visible).
+box-shadow: A visual effect that creates a shadow behind an element.
+Branch: A separate line of development in Git used to isolate changes.
+Commit: A saved set of changes in Git.
+Push: Uploading commits from your local repository to GitHub.
+Local server: A program that serves your files as if they were on the web (useful for testing).
+
+Review checklist before submitting or creating a pull request
+
+Does the animation run smoothly on page load?
+Is the class name consistent between HTML and CSS?
+Have you committed to the correct branch and pushed changes?
+Is all content school-appropriate and free of personal data you don’t want published?
+
+Reminder for teachers: Review student work and code. Small syntax issues can prevent animations from appearing; check braces, semicolons, and class names carefully.

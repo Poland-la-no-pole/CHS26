@@ -1,0 +1,148 @@
+How to Code a Simple Timed Stoplight Circuit in C++ (for Arduino) and Open the File D.Arduino-C++Tut Using GitHub Desktop
+
+Overview This procedural tutorial shows 9th‑grade students how to:
+
+Clone a forked repository using GitHub Desktop,
+Open the file named D.Arduino-C++Tut from the cloned repo,
+Upload a simple Arduino C++ program that runs a timed stoplight using three LEDs.
+All steps assume you have:
+
+GitHub Desktop installed and signed in,
+An Arduino (e.g., Uno) and USB cable,
+Three LEDs, three 220–330 Ω resistors, breadboard, and jumper wires,
+Arduino IDE installed (or use the Arduino extension in VS Code).
+Safety note Always disconnect power when wiring the breadboard. Use resistors to protect the LEDs.
+
+Materials
+
+Computer with GitHub Desktop and Arduino IDE
+Arduino board (Uno or similar)
+3 LEDs (red, yellow, green)
+3 resistors (220–330 Ω)
+Breadboard and jumper wires
+USB cable for Arduino
+Step 1 — Clone the fork with GitHub Desktop
+
+Open GitHub Desktop.
+In the app, choose File > Clone Repository.
+Select the "URL" or "GitHub.com" tab and find your fork of the repo (the one you cloned from https://github.com/MrTeuters22/CHS26). If your fork is listed under "Your repositories", select it.
+Choose a Local Path where the repository will be stored (make note of this path).
+Click "Clone".
+Confirm the repository appears in GitHub Desktop's current repository list.
+
+Step 2 — Locate the file D.Arduino-C++Tut
+
+In GitHub Desktop with the repository selected, click Repository > Show in Explorer (Windows) or Show in Finder (macOS).
+In the folder that opens, use your file explorer to find the file named:
+D.Arduino-C++Tut If the file has no extension, it may be a plain text file. If it’s intended as an Arduino sketch it might contain C++ code; you can open it in Arduino IDE or a text editor.
+Right‑click the file and choose "Open with" → Arduino IDE (or your code editor).
+
+Step 3 — Wire the stoplight circuit
+
+Place the Arduino on your workspace and connect the USB cable to the computer (do not upload code yet).
+On the breadboard:
+Insert the three LEDs so their long legs (anodes) are separate rows and short legs (cathodes) go to the common ground rail.
+Connect a resistor from each LED anode row to separate digital output pins on the Arduino:
+Red LED → Arduino digital pin 8 (through resistor)
+Yellow LED → Arduino digital pin 9 (through resistor)
+Green LED → Arduino digital pin 10 (through resistor)
+Connect all LED cathodes to the Arduino GND (ground) rail.
+Double‑check connections:
+Resistors must be in series with LEDs.
+Ground rail must connect to Arduino GND.
+
+Step 4 — The C++ (Arduino) program — simple timed stoplight Open D.Arduino-C++Tut in Arduino IDE. If the file is empty or different, paste this code into the IDE (replace pin numbers if you wired differently). All math and any expressions are wrapped appropriately.
+
+// Pin definitions
+// Pin definitions
+const int RED = 8;
+const int RED = 8;
+const int YELLOW = 9;
+const int YELLOW = 9;
+const int GREEN = 10;
+const int GREEN = 10;
+void setup() {
+void setup() {
+ pinMode(RED, OUTPUT);
+ pinMode(RED, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+}
+}
+void loop() {
+void loop() {
+ // Green on
+ // Green on
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, LOW);
+ digitalWrite(RED, LOW);
+ delay(5000); // Green for 5 seconds
+ delay(5000); // Green for 5 seconds
+ // Yellow on
+ // Yellow on
+ digitalWrite(GREEN, LOW);
+ digitalWrite(GREEN, LOW);
+ digitalWrite(YELLOW, HIGH);
+ digitalWrite(YELLOW, HIGH);
+ delay(2000); // Yellow for 2 seconds
+ delay(2000); // Yellow for 2 seconds
+ // Red on
+ // Red on
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, HIGH);
+ digitalWrite(RED, HIGH);
+ delay(5000); // Red for 5 seconds
+ delay(5000); // Red for 5 seconds
+}
+}
+Notes:
+
+The function delay(ms)
+pauses execution for ms
+ms milliseconds. For example, delay(5000)
+pauses for 5 seconds.
+Pin numbers must match your wiring.
+
+Step 5 — Upload the code to the Arduino
+
+In Arduino IDE, select Tools > Board and choose your board (e.g., Arduino Uno).
+Select Tools > Port and choose the correct COM/USB port.
+Click the Upload button (right arrow). Wait until "Done uploading" appears.
+Observe the LEDs cycle: green → yellow → red according to delays.
+Step 6 — Test and adjust timing
+
+If you want shorter or longer light durations, change the values in 
+delay(...). Example: change delay(5000)
+delay(5000) to delay(3000) for 3 seconds.
+After editing, save and upload again.
+Troubleshooting
+
+No LEDs light: check that the Arduino is connected, pins match, and GND is connected.
+LED always on: confirm the LED is connected to the correct pin through a resistor (not directly to 5V).
+Upload errors: ensure the correct board and port are selected; close other programs using the same port.
+Important Terms and Definitions
+
+Arduino: A small microcontroller board used for running simple programs and controlling electronics.
+C++ (Arduino sketch): The programming language and structure used to write code for Arduino; sketches include setup() and loop().
+GitHub Desktop: A graphical app for cloning, committing, and managing GitHub repositories on your computer.
+Repository (repo): A folder that contains project files and version history hosted on GitHub.
+Clone: A local copy of a GitHub repository on your computer.
+Commit: A saved change in the repository history.
+Push / Pull: Sending (push) or retrieving (pull) commits between local and remote repositories.
+LED: Light Emitting Diode, an electronic component that emits light when current flows.
+Resistor: An electrical component that limits current to protect LEDs.
+Digital pin: A numbered pin on Arduino used for input/output.
+GND (Ground): The reference point in an electrical circuit; needed to complete the circuit.
+delay(ms): Arduino function that pauses the program for the specified milliseconds.
+Final tips
+
+Save changes to D.Arduino-C++Tut in your local cloned folder before committing in GitHub Desktop.
+Use GitHub Desktop to Commit and Push when you want your changes reflected in your fork on GitHub.
+Keep the wiring neat and label pins so code and hardware match.
+Reminder: Review the code and wiring carefully before powering the circuit.

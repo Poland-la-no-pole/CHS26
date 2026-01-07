@@ -1,0 +1,440 @@
+How to Code a Simple Timed Stoplight Circuit in C++ (for Arduino) and Open the File D.Arduino-C++Tut Using GitHub Desktop
+
+Overview This procedural tutorial shows 9th‑grade students how to:
+
+Clone a forked repository using GitHub Desktop,
+Open the file named D.Arduino-C++Tut from the cloned repo,
+Upload a simple Arduino C++ program that runs a timed stoplight using three LEDs.
+All steps assume you have:
+
+GitHub Desktop installed and signed in,
+An Arduino (e.g., Uno) and USB cable,
+Three LEDs, three 220–330 Ω resistors, breadboard, and jumper wires,
+Arduino IDE installed (or use the Arduino extension in VS Code).
+Safety note Always disconnect power when wiring the breadboard. Use resistors to protect the LEDs.
+
+Materials
+
+Computer with GitHub Desktop and Arduino IDE
+Arduino board (Uno or similar)
+3 LEDs (red, yellow, green)
+3 resistors (220–330 Ω)
+Breadboard and jumper wires
+USB cable for Arduino
+Step 1 — Clone the fork with GitHub Desktop
+
+Open GitHub Desktop.
+In the app, choose File > Clone Repository.
+Select the "URL" or "GitHub.com" tab and find your fork of the repo (the one you cloned from https://github.com/MrTeuters22/CHS26). If your fork is listed under "Your repositories", select it.
+Choose a Local Path where the repository will be stored (make note of this path).
+Click "Clone".
+Confirm the repository appears in GitHub Desktop's current repository list.
+
+Step 2 — Locate the file D.Arduino-C++Tut
+
+In GitHub Desktop with the repository selected, click Repository > Show in Explorer (Windows) or Show in Finder (macOS).
+In the folder that opens, use your file explorer to find the file named:
+D.Arduino-C++Tut If the file has no extension, it may be a plain text file. If it’s intended as an Arduino sketch it might contain C++ code; you can open it in Arduino IDE or a text editor.
+Right‑click the file and choose "Open with" → Arduino IDE (or your code editor).
+
+Step 3 — Wire the stoplight circuit
+
+Place the Arduino on your workspace and connect the USB cable to the computer (do not upload code yet).
+On the breadboard:
+Insert the three LEDs so their long legs (anodes) are separate rows and short legs (cathodes) go to the common ground rail.
+Connect a resistor from each LED anode row to separate digital output pins on the Arduino:
+Red LED → Arduino digital pin 8 (through resistor)
+Yellow LED → Arduino digital pin 9 (through resistor)
+Green LED → Arduino digital pin 10 (through resistor)
+Connect all LED cathodes to the Arduino GND (ground) rail.
+Double‑check connections:
+Resistors must be in series with LEDs.
+Ground rail must connect to Arduino GND.
+
+Step 4 — The C++ (Arduino) program — simple timed stoplight Open D.Arduino-C++Tut in Arduino IDE. If the file is empty or different, paste this code into the IDE (replace pin numbers if you wired differently). All math and any expressions are wrapped appropriately.
+
+// Pin definitions
+// Pin definitions
+const int RED = 8;
+const int RED = 8;
+const int YELLOW = 9;
+const int YELLOW = 9;
+const int GREEN = 10;
+const int GREEN = 10;
+void setup() {
+void setup() {
+ pinMode(RED, OUTPUT);
+ pinMode(RED, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+}
+}
+void loop() {
+void loop() {
+ // Green on
+ // Green on
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, LOW);
+ digitalWrite(RED, LOW);
+ delay(5000); // Green for 5 seconds
+ delay(5000); // Green for 5 seconds
+ // Yellow on
+ // Yellow on
+ digitalWrite(GREEN, LOW);
+ digitalWrite(GREEN, LOW);
+ digitalWrite(YELLOW, HIGH);
+ digitalWrite(YELLOW, HIGH);
+ delay(2000); // Yellow for 2 seconds
+ delay(2000); // Yellow for 2 seconds
+ // Red on
+ // Red on
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, HIGH);
+ digitalWrite(RED, HIGH);
+ delay(5000); // Red for 5 seconds
+ delay(5000); // Red for 5 seconds
+}
+}
+Notes:
+
+The function delay(ms)
+pauses execution for ms
+ms milliseconds. For example, delay(5000)
+pauses for 5 seconds.
+Pin numbers must match your wiring.
+
+Step 5 — Upload the code to the Arduino
+
+In Arduino IDE, select Tools > Board and choose your board (e.g., Arduino Uno).
+Select Tools > Port and choose the correct COM/USB port.
+Click the Upload button (right arrow). Wait until "Done uploading" appears.
+Observe the LEDs cycle: green → yellow → red according to delays.
+Step 6 — Test and adjust timing
+
+If you want shorter or longer light durations, change the values in 
+delay(...). Example: change delay(5000)
+delay(5000) to delay(3000) for 3 seconds.
+After editing, save and upload again.
+Troubleshooting
+
+No LEDs light: check that the Arduino is connected, pins match, and GND is connected.
+LED always on: confirm the LED is connected to the correct pin through a resistor (not directly to 5V).
+Upload errors: ensure the correct board and port are selected; close other programs using the same port.
+Important Terms and Definitions
+
+Arduino: A small microcontroller board used for running simple programs and controlling electronics.
+C++ (Arduino sketch): The programming language and structure used to write code for Arduino; sketches include setup() and loop().
+GitHub Desktop: A graphical app for cloning, committing, and managing GitHub repositories on your computer.
+Repository (repo): A folder that contains project files and version history hosted on GitHub.
+Clone: A local copy of a GitHub repository on your computer.
+Commit: A saved change in the repository history.
+Push / Pull: Sending (push) or retrieving (pull) commits between local and remote repositories.
+LED: Light Emitting Diode, an electronic component that emits light when current flows.
+Resistor: An electrical component that limits current to protect LEDs.
+Digital pin: A numbered pin on Arduino used for input/output.
+GND (Ground): The reference point in an electrical circuit; needed to complete the circuit.
+delay(ms): Arduino function that pauses the program for the specified milliseconds.
+Final tips
+
+Save changes to D.Arduino-C++Tut in your local cloned folder before committing in GitHub Desktop.
+Use GitHub Desktop to Commit and Push when you want your changes reflected in your fork on GitHub.
+Keep the wiring neat and label pins so code and hardware match.
+Reminder: Review the code and wiring carefully before powering the circuit.How to Code a Simple Timed Stoplight Circuit in C++ (for Arduino) and Open the File D.Arduino-C++Tut Using GitHub Desktop
+
+Overview This procedural tutorial shows 9th‑grade students how to:
+
+Clone a forked repository using GitHub Desktop,
+Open the file named D.Arduino-C++Tut from the cloned repo,
+Upload a simple Arduino C++ program that runs a timed stoplight using three LEDs.
+All steps assume you have:
+
+GitHub Desktop installed and signed in,
+An Arduino (e.g., Uno) and USB cable,
+Three LEDs, three 220–330 Ω resistors, breadboard, and jumper wires,
+Arduino IDE installed (or use the Arduino extension in VS Code).
+Safety note Always disconnect power when wiring the breadboard. Use resistors to protect the LEDs.
+
+Materials
+
+Computer with GitHub Desktop and Arduino IDE
+Arduino board (Uno or similar)
+3 LEDs (red, yellow, green)
+3 resistors (220–330 Ω)
+Breadboard and jumper wires
+USB cable for Arduino
+Step 1 — Clone the fork with GitHub Desktop
+
+Open GitHub Desktop.
+In the app, choose File > Clone Repository.
+Select the "URL" or "GitHub.com" tab and find your fork of the repo (the one you cloned from https://github.com/MrTeuters22/CHS26). If your fork is listed under "Your repositories", select it.
+Choose a Local Path where the repository will be stored (make note of this path).
+Click "Clone".
+Confirm the repository appears in GitHub Desktop's current repository list.
+
+Step 2 — Locate the file D.Arduino-C++Tut
+
+In GitHub Desktop with the repository selected, click Repository > Show in Explorer (Windows) or Show in Finder (macOS).
+In the folder that opens, use your file explorer to find the file named:
+D.Arduino-C++Tut If the file has no extension, it may be a plain text file. If it’s intended as an Arduino sketch it might contain C++ code; you can open it in Arduino IDE or a text editor.
+Right‑click the file and choose "Open with" → Arduino IDE (or your code editor).
+
+Step 3 — Wire the stoplight circuit
+
+Place the Arduino on your workspace and connect the USB cable to the computer (do not upload code yet).
+On the breadboard:
+Insert the three LEDs so their long legs (anodes) are separate rows and short legs (cathodes) go to the common ground rail.
+Connect a resistor from each LED anode row to separate digital output pins on the Arduino:
+Red LED → Arduino digital pin 8 (through resistor)
+Yellow LED → Arduino digital pin 9 (through resistor)
+Green LED → Arduino digital pin 10 (through resistor)
+Connect all LED cathodes to the Arduino GND (ground) rail.
+Double‑check connections:
+Resistors must be in series with LEDs.
+Ground rail must connect to Arduino GND.
+
+Step 4 — The C++ (Arduino) program — simple timed stoplight Open D.Arduino-C++Tut in Arduino IDE. If the file is empty or different, paste this code into the IDE (replace pin numbers if you wired differently). All math and any expressions are wrapped appropriately.
+
+// Pin definitions
+// Pin definitions
+const int RED = 8;
+const int RED = 8;
+const int YELLOW = 9;
+const int YELLOW = 9;
+const int GREEN = 10;
+const int GREEN = 10;
+void setup() {
+void setup() {
+ pinMode(RED, OUTPUT);
+ pinMode(RED, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(YELLOW, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+ pinMode(GREEN, OUTPUT);
+}
+}
+void loop() {
+void loop() {
+ // Green on
+ // Green on
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(GREEN, HIGH);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, LOW);
+ digitalWrite(RED, LOW);
+ delay(5000); // Green for 5 seconds
+ delay(5000); // Green for 5 seconds
+ // Yellow on
+ // Yellow on
+ digitalWrite(GREEN, LOW);
+ digitalWrite(GREEN, LOW);
+ digitalWrite(YELLOW, HIGH);
+ digitalWrite(YELLOW, HIGH);
+ delay(2000); // Yellow for 2 seconds
+ delay(2000); // Yellow for 2 seconds
+ // Red on
+ // Red on
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(YELLOW, LOW);
+ digitalWrite(RED, HIGH);
+ digitalWrite(RED, HIGH);
+ delay(5000); // Red for 5 seconds
+ delay(5000); // Red for 5 seconds
+}
+}
+Notes:
+
+The function delay(ms)
+pauses execution for ms
+ms milliseconds. For example, delay(5000)
+pauses for 5 seconds.
+Pin numbers must match your wiring.
+
+Step 5 — Upload the code to the Arduino
+
+In Arduino IDE, select Tools > Board and choose your board (e.g., Arduino Uno).
+Select Tools > Port and choose the correct COM/USB port.
+Click the Upload button (right arrow). Wait until "Done uploading" appears.
+Observe the LEDs cycle: green → yellow → red according to delays.
+Step 6 — Test and adjust timing
+
+If you want shorter or longer light durations, change the values in 
+delay(...). Example: change delay(5000)
+delay(5000) to delay(3000) for 3 seconds.
+After editing, save and upload again.
+Troubleshooting
+
+No LEDs light: check that the Arduino is connected, pins match, and GND is connected.
+LED always on: confirm the LED is connected to the correct pin through a resistor (not directly to 5V).
+Upload errors: ensure the correct board and port are selected; close other programs using the same port.
+Important Terms and Definitions
+
+Arduino: A small microcontroller board used for running simple programs and controlling electronics.
+C++ (Arduino sketch): The programming language and structure used to write code for Arduino; sketches include setup() and loop().
+GitHub Desktop: A graphical app for cloning, committing, and managing GitHub repositories on your computer.
+Repository (repo): A folder that contains project files and version history hosted on GitHub.
+Clone: A local copy of a GitHub repository on your computer.
+Commit: A saved change in the repository history.
+Push / Pull: Sending (push) or retrieving (pull) commits between local and remote repositories.
+LED: Light Emitting Diode, an electronic component that emits light when current flows.
+Resistor: An electrical component that limits current to protect LEDs.
+Digital pin: A numbered pin on Arduino used for input/output.
+GND (Ground): The reference point in an electrical circuit; needed to complete the circuit.
+delay(ms): Arduino function that pauses the program for the specified milliseconds.
+Final tips
+
+Save changes to D.Arduino-C++Tut in your local cloned folder before committing in GitHub Desktop.
+Use GitHub Desktop to Commit and Push when you want your changes reflected in your fork on GitHub.
+Keep the wiring neat and label pins so code and hardware match.
+Reminder: Review the code and wiring carefully before powering the circuit.How to Use Java to Code a Simple Rock–Paper–Scissors Game from E.JavaTut in Your Cloned Fork (Using GitHub Desktop)
+
+Overview This step-by-step procedural tutorial shows 9th‑grade students how to locate the file named E.JavaTut in a cloned fork of the repository https://github.com/MrTeuters22/CHS26, open it in a Java editor, run or adapt the simple Rock–Paper–Scissors program, and save and push changes back to the fork using GitHub Desktop. Follow each step carefully. This guide assumes you have a computer with GitHub Desktop installed and Java (JDK) plus a simple code editor (for example, VS Code, IntelliJ IDEA Community, or a plain text editor that supports .java files).
+
+Before you begin (prerequisites)
+
+A GitHub account.
+GitHub Desktop installed and signed in.
+Java Development Kit (JDK) installed (version 8 or later).
+A code editor installed (VS Code, IntelliJ, or similar).
+Basic keyboard and file‑navigation skills.
+Important terms (with definitions)
+
+Fork: A copy of a repository on your GitHub account. You can make and test changes there without affecting the original repository.
+Clone: Downloading the forked repository to your local computer.
+Repository (repo): A project folder on GitHub containing files and version history.
+Commit: A saved change in your local repository with a message describing the change.
+Push: Sending local commits to the remote fork on GitHub.
+Branch: A separate line of development inside a repo. (You can use the default branch for this simple task.)
+JDK (Java Development Kit): Software required to compile and run Java programs.
+.java file: A file that contains Java source code; its name normally matches a public class inside.
+Compile: Convert Java source code to bytecode (class files) using the Java compiler.
+Run: Execute compiled Java bytecode with the Java runtime.
+Step 1 — Fork the repository (if not already forked)
+
+Open your web browser and go to https://github.com/MrTeuters22/CHS26.
+Click the "Fork" button (top-right). This creates a copy under your GitHub account.
+Confirm the fork is available at https://github.com/your-username/CHS26 (replace your-username).
+
+Step 2 — Clone the fork to your computer with GitHub Desktop
+
+Open GitHub Desktop and sign in to your GitHub account.
+In GitHub Desktop, choose File > Clone repository.
+Select the "GitHub.com" tab, find the fork you created (your-username/CHS26), and click Clone.
+Choose a local path where you want the project folder to live and click Clone. GitHub Desktop downloads the repo to that folder.
+
+Step 3 — Locate E.JavaTut file in the cloned folder
+
+In GitHub Desktop, click Repository > Show in Finder (Mac) or Show in Explorer (Windows) to open the local repo folder.
+Inside the repo folder, search for a file named exactly E.JavaTut. (If the project organizes files in subfolders, use your file explorer's search box to find E.JavaTut.)
+Note: If E.JavaTut is not a .java file, it may contain Java code or instructions. If it contains Java source code, save a copy as a proper Java filename with .java extension (see Step 4).
+
+Step 4 — Prepare the Java source file
+
+If E.JavaTut is already named E.java or a .java file, open it in your editor. If it's named E.JavaTut (not a standard .java extension), do this:
+Make a copy of E.JavaTut and rename the copy to E.java.
+Ensure the top of the file contains a public class named E (the filename must match the public class name).
+Open E.java in your Java editor (or text editor). Read comments at the top to understand what the code does.
+
+Step 5 — Check and fix common issues (make it runnable)
+
+Confirm the file contains a public class whose name matches the filename:
+If the code has public class E { ... }, the filename must be E.java.
+Look for the main method:
+There must be a method defined like:
+
+public static void main(String[] args)
+If the main method is missing, you may need to add a simple main wrapper that calls the game's method.
+If the code uses packages (a line like package some.package;) ensure the file is saved in matching folders. For this tutorial, remove or comment out the package line if you are running the file standalone.
+
+Step 6 — Compile and run the game from the command line (optional) or using your editor Option A — Using command line:
+
+Open a terminal or command prompt.
+Navigate to the folder containing E.java:
+Example: cd path/to/CHS26
+Compile with:
+javac E.java
+If compilation produces E.class, compilation succeeded.
+Run the program with:
+java E
+Follow any on-screen prompts to play Rock–Paper–Scissors.
+Option B — Using an editor (VS Code / IntelliJ):
+
+In VS Code: open the folder containing E.java. Install the Java Extension Pack if prompted.
+Use the editor's Run/Debug options to compile and run the file. Confirm the Run configuration uses E as the main class.
+In IntelliJ: create a new project from existing sources, locate E.java, and run the file.
+
+Step 7 — How a simple Rock–Paper–Scissors program typically works (student‑level explanation)
+
+The program asks the player to type rock, paper, or scissors.
+The program generates a random choice for the computer.
+The program compares the player's choice and the computer's choice and prints the winner using simple rules:
+Rock beats scissors.
+Scissors beat paper.
+Paper beats rock.
+Example decision logic (conceptual, not runnable text): compare strings and decide the winner.
+Step 8 — If you want to edit behavior (make small changes)
+
+To change messages or add input validation:
+Open E.java and find the line where user input is read (Scanner usage is common).
+Add code to convert input to lower-case for comparison:
+
+userInput=userInput.toLowerCase();
+Add a loop that prompts again if input is invalid.
+To add multiple rounds or scoring:
+Create variables for playerScore and computerScore.
+Wrap the game logic in a for loop or while loop.
+After each round, update scores and show results.
+
+Step 9 — Save changes, commit, and push with GitHub Desktop
+
+In your editor, save E.java.
+Return to GitHub Desktop; you should see changed files listed as "Changed".
+In the Summary box, write a short commit message (for example: "Make E.java runnable and add input validation").
+Click Commit to master (or Commit to main).
+Click Push origin to upload the commit to your fork on GitHub.
+
+Step 10 — Verify on GitHub
+
+Go to your fork on GitHub (https://github.com/your-username/CHS26).
+Open the file E.java in the web interface to confirm your changes appear.
+Troubleshooting tips
+
+Compilation errors: read the terminal messages — they point to the line numbers and the type of error (syntax, missing semicolon, mismatched braces).
+Class name mismatch: ensure public class name exactly matches file name (E.java → public class E).
+Missing JDK: If the terminal shows "javac: command not found", install the JDK and add it to your PATH.
+Editor can't run program: check Run configuration uses the correct project and classpath.
+Safety and classroom notes
+
+Do not share passwords or personal data. Use school-approved accounts.
+Ask for teacher help if you are unsure about changing code or using GitHub.
+Example minimal main wrapper (conceptual) If E.JavaTut contains methods but no main, you may add a main like:
+
+Conceptual idea (remember to keep syntax exactly as Java requires)
+
+public class E { 
+   public static void main(String[] args) {
+     //callthemethodthatstartsthegame,forexample:startGame();
+     startGame();
+   }
+   //...othermethodssuchasstartGame()...
+}
+(Place this in E.java only if the class and methods are compatible.)
+
+Final checklist before finishing
+
+ E.java exists and its public class matches filename.
+ File compiles with javac E.java and runs with java E.
+ You saved, committed, and pushed changes with GitHub Desktop.
+ You tested the game locally and it behaves as expected.
+Reminder for teachers Please review student edits and code before approving any pushes or merges. Always check that students did not add inappropriate content or expose sensitive information.
+
+If you want, I can:
+
+Provide a short, runnable example Rock–Paper–Scissors Java program appropriate for 9th‑grade students (in a file named E.java).
+Or create a checklist worksheet for students to follow while cloning, running, and modifying the program.

@@ -1,0 +1,120 @@
+How to Build a “Guess the Letter” Game in TypeScript from a Cloned Repo (F.TypeScriptTut)
+Overview
+This step-by-step procedural guide shows 9th-grade students how to open a cloned fork of the repository https://github.com/MrTeuters22/CHS26 using GitHub Desktop, locate the file named F.TypeScriptTut, and implement a simple TypeScript "Guess the Letter" command-line game. Follow each step carefully. Assume you already cloned the fork of the repository to your computer using GitHub Desktop.
+Before you start — Requirements
+
+GitHub Desktop installed and signed in.
+Visual Studio Code (or another code editor) installed.
+Node.js and npm installed (recommended version: current LTS).
+The repository cloned locally using GitHub Desktop (your fork of CHS26).
+Basic familiarity with opening folders in an editor and running terminal commands.
+
+Step 1 — Open your cloned repository in GitHub Desktop and VS Code
+
+Open GitHub Desktop.
+In the “Current Repository” menu, select your fork of CHS26.
+Use “Repository” → “Open in Visual Studio Code” (or click “Show in Finder/Explorer” and open folder).
+In VS Code, locate the file F.TypeScriptTut in the project folder. If F.TypeScriptTut is a text file, rename it to F.TypeScriptTut.ts in the editor (keeping a backup of the original) or create a new TypeScript file named F.TypeScriptTut.ts if the assignment expects a .ts file. Save it in the project’s appropriate folder (e.g., a src or root folder).
+
+Step 2 — Initialize a Node/TypeScript project (if not already set up)
+
+Open the integrated terminal in VS Code (View → Terminal).
+In the project root, run:
+
+Initialize npm (if no package.json):
+npm init -y
+
+Install TypeScript and types/node locally:
+npm install --save-dev typescript @types/node
+
+Create a basic tsconfig.json if one does not exist:
+npx tsc --init
+
+
+
+Optionally add a script to package.json to compile TypeScript:
+
+In package.json "scripts" add:
+"build": "tsc"
+
+And to run via node after compiling:
+"start": "node ./dist/F.TypeScriptTut.js"
+
+
+
+
+Step 3 — Create the “Guess the Letter” game in TypeScript
+
+
+In F.TypeScriptTut.ts add the following structure (explain each part as you write it):
+
+Import the Node readline module to read user input from the terminal.
+Create a function to pick a random letter.
+Create a loop or recursive function to prompt the user for guesses, provide feedback (too early/late letters), count guesses, and end when correct.
+
+
+
+Example logic outline (explain without pasting entire code block):
+
+Set an array of possible letters a–z.
+Randomly choose one letter as the secret.
+Prompt the player to guess.
+If the guess is not a single letter, ask again.
+If guess is lower/higher alphabetically than secret, tell the user "The secret letter is later" or "earlier".
+Count attempts and on correct guess print a congratulatory message and attempt count, then exit.
+
+
+
+Key TypeScript notes:
+
+Use types: e.g., const secret: string, function return types such as : void or : Promise<void> if using async/await.
+When using readline, close the interface when the game ends.
+
+
+
+Step 4 — Compile and run
+
+Compile TypeScript to JavaScript:
+npm run build
+(Or run npx tsc if you haven’t added the script.)
+Run the compiled JavaScript:
+npm run start
+or
+node ./dist/F.TypeScriptTut.js
+
+Play the game in the terminal. Make guesses until the program reports success.
+
+Step 5 — Save and commit changes using GitHub Desktop
+
+In VS Code, ensure your changes are saved.
+In GitHub Desktop you will see changed files. Add a helpful commit message like “Add TypeScript Guess-the-Letter game (F.TypeScriptTut.ts)”.
+Click Commit to main (or your branch).
+Push to your fork on GitHub by clicking “Push origin”.
+
+Step 6 — Test and iterate
+
+Play the game several times to ensure prompts, validation, and messages work as expected.
+If errors occur, check the terminal messages and correct TypeScript types or logic. Rebuild and rerun until working.
+
+Important terms and definitions
+
+Repository: A storage space for a project’s files and history tracked by Git.
+Fork: A personal copy of someone else's repository on GitHub.
+Clone: A local copy of the repository on your computer.
+Commit: A recorded change to files in the repository with a message describing the change.
+Push: Uploading local commits to a remote repository (your fork on GitHub).
+TypeScript: A programming language that adds types to JavaScript to help catch errors.
+Transpile/Compile: Converting TypeScript into JavaScript so Node can run it.
+Node.js: A runtime environment that executes JavaScript on the computer (outside the browser).
+npm: Node Package Manager — a system to install packages (like TypeScript) and run scripts.
+readline: A Node standard library module that reads input from the command line.
+tsconfig.json: A configuration file that controls how TypeScript is compiled.
+Interface (readline): An object in Node that manages reading input and writing output for the terminal.
+
+Teacher notes / quick tips
+
+Encourage students to add input validation (reject more than one character or non-letter input).
+Suggest extending the game: add difficulty levels, allow uppercase input by normalizing with .toLowerCase(), or track and display previous guesses.
+Remind students to verify that compiled JavaScript is in the expected folder (commonly dist/) and that package.json scripts point to the correct file path.
+
+Review this implementation and test locally. If you want, request a short sample TypeScript implementation of the game for classroom reference (I will provide code formatted and annotated for students).
